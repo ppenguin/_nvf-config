@@ -1,0 +1,1563 @@
+fetching git input 'git+file:///home/jeroen/devel/github.com/ppenguin/nixos-configs'
+warning: Git tree '/home/jeroen/devel/github.com/ppenguin/nixos-configs' is dirty
+[32m>[39m Building home configuration
+[?25lfetching git input 'git+file:///home/jeroen/devel/github.com/ppenguin/nixos-configs'
+[35;1mwarning:[0m Git tree '[35;1m/home/jeroen/devel/github.com/ppenguin/nixos-configs[0m' is dirty
+[1m⏱ 0s[0m[1G[2K[1m⏱ 1s[0m[1G[2K[1m⏱ 2s[0m[1G[2K[1m⏱ 3s[0m[1G[2K[1m⏱ 3s[0m[1G[2K[1m⏱ 3s[0m[1G[2K[1m⏱ 4s[0m[1G[2K[1m⏱ 5s[0m[1G[2K[1m⏱ 6s[0m[1G[2K[1m⏱ 6s[0m[1G[2K[1m⏱ 6s[0m[1G[2K[1m⏱ 7s[0m[1G[2K[1m⏱ 8s[0m[1G[2K[1m⏱ 9s[0m[1G[2K[1m⏱ 10s[0m[1G[2K[1m⏱ 11s[0m[1G[2K[1m⏱ 12s[0m[1G[2K[1m⏱ 13s[0m[1G[2K[1m⏱ 14s[0m[1G[2K[31;1merror:[0m
+       … while calling the '[35;1mderivationStrict[0m' builtin
+         [34;1mat [35;1m/builtin/derivation.nix:1:208[0m:
+       … while evaluating derivation '[35;1mhome-manager-generation[0m'
+         whose name attribute is located at [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/stdenv/generic/make-derivation.nix:334:7[0m
+
+       … while evaluating attribute '[35;1mbuildCommand[0m' of derivation '[35;1mhome-manager-generation[0m'
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:68:17[0m:
+           67|         enableParallelBuilding = true;
+           68|         inherit buildCommand name;
+             |                 [31;1m^[0m
+           69|         passAsFile = [ "buildCommand" ]
+
+       … while calling the '[35;1mgetAttr[0m' builtin
+         [34;1mat [35;1m/builtin/derivation.nix:1:500[0m:
+       … while calling the '[35;1mderivationStrict[0m' builtin
+         [34;1mat [35;1m/builtin/derivation.nix:1:208[0m:
+       … while evaluating derivation '[35;1mactivation-script[0m'
+         whose name attribute is located at [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/stdenv/generic/make-derivation.nix:334:7[0m
+
+       … while evaluating attribute '[35;1mtext[0m' of derivation '[35;1mactivation-script[0m'
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:103:17[0m:
+          102|       ({
+          103|         inherit text executable checkPhase allowSubstitutes preferLocalBuild;
+             |                 [31;1m^[0m
+          104|         passAsFile = [ "text" ]
+
+       … while calling the '[35;1mconcatStringsSep[0m' builtin
+         [34;1mat [35;1m/nix/store/lk3d5lnbsxyv8bkr9vyqc589ivcgnz9n-source/modules/home-environment.nix:673:13[0m:
+          672|           if sortedCommands ? result then
+          673|             concatStringsSep "\n" (map mkCmd sortedCommands.result)
+             |             [31;1m^[0m
+          674|           else
+
+       … while calling [35;1m'mkCmd'[0m
+         [34;1mat [35;1m/nix/store/lk3d5lnbsxyv8bkr9vyqc589ivcgnz9n-source/modules/home-environment.nix:666:17[0m:
+          665|       let
+          666|         mkCmd = res: ''
+             |                 [31;1m^[0m
+          667|             _iNote "Activating %s" "${res.name}"
+
+       … while evaluating the attribute '[35;1mdata[0m'
+         [34;1mat [35;1m/nix/store/lk3d5lnbsxyv8bkr9vyqc589ivcgnz9n-source/modules/lib/dag.nix:89:43[0m:
+           88|     in if sorted ? result then {
+           89|       result = map (v: { inherit (v) name data; }) sorted.result;
+             |                                           [31;1m^[0m
+           90|     } else
+
+       … while evaluating the attribute '[35;1mdata[0m'
+         [34;1mat [35;1m/nix/store/lk3d5lnbsxyv8bkr9vyqc589ivcgnz9n-source/modules/lib/dag.nix:83:9[0m:
+           82|         name = n;
+           83|         data = v.data;
+             |         [31;1m^[0m
+           84|         after = v.after ++ dagBefore dag n;
+
+       … from call site
+         [34;1mat [35;1m/nix/store/lk3d5lnbsxyv8bkr9vyqc589ivcgnz9n-source/modules/lib/dag.nix:83:16[0m:
+           82|         name = n;
+           83|         data = v.data;
+             |                [31;1m^[0m
+           84|         after = v.after ++ dagBefore dag n;
+
+       … while calling [35;1manonymous lambda[0m
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/attrsets.nix:1205:18[0m:
+         1204|         mapAttrs
+         1205|           (name: value:
+             |                  [31;1m^[0m
+         1206|             if isAttrs value && cond value
+
+       … from call site
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/attrsets.nix:1208:18[0m:
+         1207|             then recurse (path ++ [ name ]) value
+         1208|             else f (path ++ [ name ]) value);
+             |                  [31;1m^[0m
+         1209|     in
+
+       … while calling [35;1manonymous lambda[0m
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:254:72[0m:
+          253|           # For definitions that have an associated option
+          254|           declaredConfig = mapAttrsRecursiveCond (v: ! isOption v) (_: v: v.value) options;
+             |                                                                        [31;1m^[0m
+          255|
+
+       … while evaluating the attribute '[35;1mvalue[0m'
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:821:9[0m:
+          820|     in warnDeprecation opt //
+          821|       { value = addErrorContext "while evaluating the option `${showOption loc}':" value;
+             |         [31;1m^[0m
+          822|         inherit (res.defsFinal') highestPrio;
+
+       … while calling the '[35;1maddErrorContext[0m' builtin
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:821:17[0m:
+          820|     in warnDeprecation opt //
+          821|       { value = addErrorContext "while evaluating the option `${showOption loc}':" value;
+             |                 [31;1m^[0m
+          822|         inherit (res.defsFinal') highestPrio;
+
+       … while evaluating the option `home.activation.installPackages.data':
+
+       … while evaluating the attribute '[35;1mmergedValue[0m'
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:856:5[0m:
+          855|     # Type-check the remaining definitions, and merge them. Or throw if no definitions.
+          856|     mergedValue =
+             |     [31;1m^[0m
+          857|       if isDefined then
+
+       … while evaluating a branch condition
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:857:7[0m:
+          856|     mergedValue =
+          857|       if isDefined then
+             |       [31;1m^[0m
+          858|         if all (def: type.check def.value) defsFinal then type.merge loc defsFinal
+
+       … while evaluating the attribute '[35;1mvalues[0m'
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:850:9[0m:
+          849|       in {
+          850|         values = defs''';
+             |         [31;1m^[0m
+          851|         inherit (defs'') highestPrio;
+
+       … while evaluating a branch condition
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:846:11[0m:
+          845|           # Avoid sorting if we don't have to.
+          846|           if any (def: def.value._type or "" == "order") defs''.values
+             |           [31;1m^[0m
+          847|           then sortProperties defs''.values
+
+       … while calling the '[35;1many[0m' builtin
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:846:14[0m:
+          845|           # Avoid sorting if we don't have to.
+          846|           if any (def: def.value._type or "" == "order") defs''.values
+             |              [31;1m^[0m
+          847|           then sortProperties defs''.values
+
+       … while evaluating the attribute '[35;1mvalues[0m'
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:949:7[0m:
+          948|     in {
+          949|       values = concatMap (def: if getPrio def == highestPrio then [(strip def)] else []) defs;
+             |       [31;1m^[0m
+          950|       inherit highestPrio;
+
+       … while calling the '[35;1mconcatMap[0m' builtin
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:949:16[0m:
+          948|     in {
+          949|       values = concatMap (def: if getPrio def == highestPrio then [(strip def)] else []) defs;
+             |                [31;1m^[0m
+          950|       inherit highestPrio;
+
+       … while calling the '[35;1mconcatMap[0m' builtin
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:836:17[0m:
+          835|         # Process mkMerge and mkIf properties.
+          836|         defs' = concatMap (m:
+             |                 [31;1m^[0m
+          837|           map (value: { inherit (m) file; inherit value; }) (addErrorContext "while evaluating definitions from `${m.file}':" (dischargeProperties m.value))
+
+       … while calling [35;1manonymous lambda[0m
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:836:28[0m:
+          835|         # Process mkMerge and mkIf properties.
+          836|         defs' = concatMap (m:
+             |                            [31;1m^[0m
+          837|           map (value: { inherit (m) file; inherit value; }) (addErrorContext "while evaluating definitions from `${m.file}':" (dischargeProperties m.value))
+
+       … while calling the '[35;1mmap[0m' builtin
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:837:11[0m:
+          836|         defs' = concatMap (m:
+          837|           map (value: { inherit (m) file; inherit value; }) (addErrorContext "while evaluating definitions from `${m.file}':" (dischargeProperties m.value))
+             |           [31;1m^[0m
+          838|         ) defs;
+
+       … while calling the '[35;1maddErrorContext[0m' builtin
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:837:62[0m:
+          836|         defs' = concatMap (m:
+          837|           map (value: { inherit (m) file; inherit value; }) (addErrorContext "while evaluating definitions from `${m.file}':" (dischargeProperties m.value))
+             |                                                              [31;1m^[0m
+          838|         ) defs;
+
+       … while evaluating definitions from `/nix/store/lk3d5lnbsxyv8bkr9vyqc589ivcgnz9n-source/modules/home-environment.nix':
+
+       … from call site
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:837:128[0m:
+          836|         defs' = concatMap (m:
+          837|           map (value: { inherit (m) file; inherit value; }) (addErrorContext "while evaluating definitions from `${m.file}':" (dischargeProperties m.value))
+             |                                                                                                                                [31;1m^[0m
+          838|         ) defs;
+
+       … while calling [35;1m'dischargeProperties'[0m
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:908:25[0m:
+          907|   */
+          908|   dischargeProperties = def:
+             |                         [31;1m^[0m
+          909|     if def._type or "" == "merge" then
+
+       … while evaluating a branch condition
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:909:5[0m:
+          908|   dischargeProperties = def:
+          909|     if def._type or "" == "merge" then
+             |     [31;1m^[0m
+          910|       concatMap dischargeProperties def.contents
+
+       … while evaluating the attribute '[35;1mvalue[0m'
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:619:53[0m:
+          618|                 (n: value:
+          619|                   [{ inherit (module) file; inherit value; }]
+             |                                                     [31;1m^[0m
+          620|                 )
+
+       … while calling the '[35;1mgetAttr[0m' builtin
+         [34;1mat [35;1m/builtin/derivation.nix:1:500[0m:
+       … while calling the '[35;1mderivationStrict[0m' builtin
+         [34;1mat [35;1m/builtin/derivation.nix:1:208[0m:
+       … while evaluating derivation '[35;1mhome-manager-path[0m'
+         whose name attribute is located at [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/stdenv/generic/make-derivation.nix:334:7[0m
+
+       … while evaluating attribute '[35;1mpassAsFile[0m' of derivation '[35;1mhome-manager-path[0m'
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:69:9[0m:
+           68|         inherit buildCommand name;
+           69|         passAsFile = [ "buildCommand" ]
+             |         [31;1m^[0m
+           70|           ++ (derivationArgs.passAsFile or [ ]);
+
+       … while evaluating the attribute '[35;1mpassAsFile[0m'
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:76:5[0m:
+           75|     # XXX: The size is somewhat arbitrary
+           76|     passAsFile = if builtins.stringLength pkgs >= 128*1024 then [ "pkgs" ] else [ ];
+             |     [31;1m^[0m
+           77|   }
+
+       … while evaluating a branch condition
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:76:18[0m:
+           75|     # XXX: The size is somewhat arbitrary
+           76|     passAsFile = if builtins.stringLength pkgs >= 128*1024 then [ "pkgs" ] else [ ];
+             |                  [31;1m^[0m
+           77|   }
+
+       … in the argument of the not operator
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:76:48[0m:
+           75|     # XXX: The size is somewhat arbitrary
+           76|     passAsFile = if builtins.stringLength pkgs >= 128*1024 then [ "pkgs" ] else [ ];
+             |                                                [31;1m^[0m
+           77|   }
+
+       … while calling the '[35;1mlessThan[0m' builtin
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:76:48[0m:
+           75|     # XXX: The size is somewhat arbitrary
+           76|     passAsFile = if builtins.stringLength pkgs >= 128*1024 then [ "pkgs" ] else [ ];
+             |                                                [31;1m^[0m
+           77|   }
+
+       … while calling the '[35;1mstringLength[0m' builtin
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:76:21[0m:
+           75|     # XXX: The size is somewhat arbitrary
+           76|     passAsFile = if builtins.stringLength pkgs >= 128*1024 then [ "pkgs" ] else [ ];
+             |                     [31;1m^[0m
+           77|   }
+
+       … while calling the '[35;1mtoJSON[0m' builtin
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:58:12[0m:
+           57|             nativeBuildInputs buildInputs;
+           58|     pkgs = builtins.toJSON (map (drv: {
+             |            [31;1m^[0m
+           59|       paths =
+
+       … while evaluating list element at index [35;1m120[0m
+
+       … while evaluating attribute '[35;1mpaths[0m'
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:59:7[0m:
+           58|     pkgs = builtins.toJSON (map (drv: {
+           59|       paths =
+             |       [31;1m^[0m
+           60|         # First add the usual output(s): respect if user has chosen explicitly,
+
+       … while evaluating list element at index [35;1m0[0m
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:59:7[0m:
+           58|     pkgs = builtins.toJSON (map (drv: {
+           59|       paths =
+             |       [31;1m^[0m
+           60|         # First add the usual output(s): respect if user has chosen explicitly,
+
+       … while calling the '[35;1mgetAttr[0m' builtin
+         [34;1mat [35;1m/builtin/derivation.nix:1:500[0m:
+       … while calling the '[35;1mderivationStrict[0m' builtin
+         [34;1mat [35;1m/builtin/derivation.nix:1:208[0m:
+       … while evaluating derivation '[35;1mneovim-0.10.0[0m'
+         whose name attribute is located at [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/stdenv/generic/make-derivation.nix:334:7[0m
+
+       … while evaluating attribute '[35;1minstallPhase[0m' of derivation '[35;1mneovim-0.10.0[0m'
+         [34;1mat [35;1m/nix/store/iqjb7l72w8zkmiyid9zghprj7x9ndsrs-source/wrapper.nix:214:5[0m:
+          213|
+          214|     installPhase = ''
+             |     [31;1m^[0m
+          215|       runHook preInstall
+
+       … while calling the '[35;1mgetAttr[0m' builtin
+         [34;1mat [35;1m/builtin/derivation.nix:1:500[0m:
+       … while calling the '[35;1mderivationStrict[0m' builtin
+         [34;1mat [35;1m/builtin/derivation.nix:1:208[0m:
+       … while evaluating derivation '[35;1minit.lua[0m'
+         whose name attribute is located at [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/stdenv/generic/make-derivation.nix:334:7[0m
+
+       … while evaluating attribute '[35;1mtext[0m' of derivation '[35;1minit.lua[0m'
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:103:17[0m:
+          102|       ({
+          103|         inherit text executable checkPhase allowSubstitutes preferLocalBuild;
+             |                 [31;1m^[0m
+          104|         passAsFile = [ "text" ]
+
+       … from call site
+         [34;1mat [35;1m/nix/store/iqjb7l72w8zkmiyid9zghprj7x9ndsrs-source/wrapper.nix:188:9[0m:
+          187|
+          188|       ${lib.optionalString (allPlugins != [ ]) ''
+             |         [31;1m^[0m
+          189|         vim.opt.packpath:append('${packedDir}')
+
+       … while calling [35;1m'optionalString'[0m
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/strings.nix:268:5[0m:
+          267|     # String to return if condition is true
+          268|     string: if cond then string else "";
+             |     [31;1m^[0m
+          269|
+
+       … while calling the '[35;1mgetAttr[0m' builtin
+         [34;1mat [35;1m/builtin/derivation.nix:1:500[0m:
+       … while calling the '[35;1mderivationStrict[0m' builtin
+         [34;1mat [35;1m/builtin/derivation.nix:1:208[0m:
+       … while evaluating derivation '[35;1mneovim-pack-dir[0m'
+         whose name attribute is located at [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/stdenv/generic/make-derivation.nix:334:7[0m
+
+       … while evaluating attribute '[35;1mpassAsFile[0m' of derivation '[35;1mneovim-pack-dir[0m'
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:69:9[0m:
+           68|         inherit buildCommand name;
+           69|         passAsFile = [ "buildCommand" ]
+             |         [31;1m^[0m
+           70|           ++ (derivationArgs.passAsFile or [ ]);
+
+       [35;1m(6 duplicate frames omitted)[0m
+
+       … while evaluating list element at index [35;1m0[0m
+
+       … while evaluating attribute '[35;1mpaths[0m'
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:59:7[0m:
+           58|     pkgs = builtins.toJSON (map (drv: {
+           59|       paths =
+             |       [31;1m^[0m
+           60|         # First add the usual output(s): respect if user has chosen explicitly,
+
+       … while evaluating list element at index [35;1m0[0m
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:59:7[0m:
+           58|     pkgs = builtins.toJSON (map (drv: {
+           59|       paths =
+             |       [31;1m^[0m
+           60|         # First add the usual output(s): respect if user has chosen explicitly,
+
+       … while calling the '[35;1mgetAttr[0m' builtin
+         [34;1mat [35;1m/builtin/derivation.nix:1:500[0m:
+       … while calling the '[35;1mderivationStrict[0m' builtin
+         [34;1mat [35;1m/builtin/derivation.nix:1:208[0m:
+       … while evaluating derivation '[35;1mpackdir[0m'
+         whose name attribute is located at [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/stdenv/generic/make-derivation.nix:334:7[0m
+
+       … while evaluating attribute '[35;1mbuildCommand[0m' of derivation '[35;1mpackdir[0m'
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:68:17[0m:
+           67|         enableParallelBuilding = true;
+           68|         inherit buildCommand name;
+             |                 [31;1m^[0m
+           69|         passAsFile = [ "buildCommand" ]
+
+       … while calling the '[35;1mconcatStringsSep[0m' builtin
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:545:9[0m:
+          544|       cd $out
+          545|       ${lib.concatStrings linkCommands}
+             |         [31;1m^[0m
+          546|     '';
+
+       … from call site
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:530:22[0m:
+          529|
+          530|       linkCommands = lib.mapAttrsToList
+             |                      [31;1m^[0m
+          531|         (name: path: ''
+
+       … while calling [35;1m'mapAttrsToList'[0m
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/attrsets.nix:1095:5[0m:
+         1094|     f:
+         1095|     attrs:
+             |     [31;1m^[0m
+         1096|     map (name: f name attrs.${name}) (attrNames attrs);
+
+       … while calling the '[35;1mmap[0m' builtin
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/attrsets.nix:1096:5[0m:
+         1095|     attrs:
+         1096|     map (name: f name attrs.${name}) (attrNames attrs);
+             |     [31;1m^[0m
+         1097|
+
+       … while calling the '[35;1mattrNames[0m' builtin
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/attrsets.nix:1096:39[0m:
+         1095|     attrs:
+         1096|     map (name: f name attrs.${name}) (attrNames attrs);
+             |                                       [31;1m^[0m
+         1097|
+
+       … from call site
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:527:43[0m:
+          526|         # We do this foldl to have last-wins semantics in case of repeated entries
+          527|         else if (lib.isList entries) then lib.foldl (a: b: a // { "${b.name}" = b.path; }) { } entries
+             |                                           [31;1m^[0m
+          528|         else throw "linkFarm entries must be either attrs or a list!";
+
+       … while calling [35;1m'foldl'[0m
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/lists.nix:178:20[0m:
+          177|   */
+          178|   foldl = op: nul: list:
+             |                    [31;1m^[0m
+          179|     let
+
+       … from call site
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/lists.nix:184:8[0m:
+          183|         else op (foldl' (n - 1)) (elemAt list n);
+          184|     in foldl' (length list - 1);
+             |        [31;1m^[0m
+          185|
+
+       … while calling [35;1m'foldl''[0m
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/lists.nix:180:16[0m:
+          179|     let
+          180|       foldl' = n:
+             |                [31;1m^[0m
+          181|         if n == -1
+
+       … from call site
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/lists.nix:183:14[0m:
+          182|         then nul
+          183|         else op (foldl' (n - 1)) (elemAt list n);
+             |              [31;1m^[0m
+          184|     in foldl' (length list - 1);
+
+       … while calling [35;1manonymous lambda[0m
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:527:57[0m:
+          526|         # We do this foldl to have last-wins semantics in case of repeated entries
+          527|         else if (lib.isList entries) then lib.foldl (a: b: a // { "${b.name}" = b.path; }) { } entries
+             |                                                         [31;1m^[0m
+          528|         else throw "linkFarm entries must be either attrs or a list!";
+
+       … in the left operand of the update (//) operator
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:527:62[0m:
+          526|         # We do this foldl to have last-wins semantics in case of repeated entries
+          527|         else if (lib.isList entries) then lib.foldl (a: b: a // { "${b.name}" = b.path; }) { } entries
+             |                                                              [31;1m^[0m
+          528|         else throw "linkFarm entries must be either attrs or a list!";
+
+       … from call site
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/lists.nix:183:18[0m:
+          182|         then nul
+          183|         else op (foldl' (n - 1)) (elemAt list n);
+             |                  [31;1m^[0m
+          184|     in foldl' (length list - 1);
+
+       [35;1m(43 duplicate frames omitted)[0m
+
+       … in the right operand of the update (//) operator
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:527:62[0m:
+          526|         # We do this foldl to have last-wins semantics in case of repeated entries
+          527|         else if (lib.isList entries) then lib.foldl (a: b: a // { "${b.name}" = b.path; }) { } entries
+             |                                                              [31;1m^[0m
+          528|         else throw "linkFarm entries must be either attrs or a list!";
+
+       … while evaluating the attribute '[35;1mname[0m'
+         [34;1mat [35;1m/nix/store/iqjb7l72w8zkmiyid9zghprj7x9ndsrs-source/wrapper.nix:73:15[0m:
+           72|             map (drv: {
+           73|               name = "${packPath}/start/${lib.getName drv}";
+             |               [31;1m^[0m
+           74|               path = drv;
+
+       … from call site
+         [34;1mat [35;1m/nix/store/iqjb7l72w8zkmiyid9zghprj7x9ndsrs-source/wrapper.nix:73:43[0m:
+           72|             map (drv: {
+           73|               name = "${packPath}/start/${lib.getName drv}";
+             |                                           [31;1m^[0m
+           74|               path = drv;
+
+       … while calling [35;1manonymous lambda[0m
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/strings.nix:731:6[0m:
+          730|     parse = drv: (parseDrvName drv).name;
+          731|   in x:
+             |      [31;1m^[0m
+          732|     if isString x
+
+       … from call site
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/strings.nix:734:22[0m:
+          733|     then parse x
+          734|     else x.pname or (parse x.name);
+             |                      [31;1m^[0m
+          735|
+
+       … while calling [35;1m'parse'[0m
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/strings.nix:730:13[0m:
+          729|   getName = let
+          730|     parse = drv: (parseDrvName drv).name;
+             |             [31;1m^[0m
+          731|   in x:
+
+       … while calling the '[35;1mparseDrvName[0m' builtin
+         [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/strings.nix:730:19[0m:
+          729|   getName = let
+          730|     parse = drv: (parseDrvName drv).name;
+             |                   [31;1m^[0m
+          731|   in x:
+
+       … while evaluating the first argument passed to builtins.parseDrvName
+
+       [31;1merror:[0m attribute '[35;1mname[0m' missing
+       [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/strings.nix:734:28[0m:
+          733|     then parse x
+          734|     else x.pname or (parse x.name);
+             |                            [31;1m^[0m
+          735|
+┏━[1;31m 1 Errors: [0m
+┃ [31;1merror:[0m
+┃        … while calling the '[35;1mderivationStrict[0m' builtin
+┃          [34;1mat [35;1m/builtin/derivation.nix:1:208[0m:
+┃        … while evaluating derivation '[35;1mhome-manager-generation[0m'
+┃          whose name attribute is located at [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/stdenv/generic/make-derivation.nix:334:7[0m
+┃ 
+┃        … while evaluating attribute '[35;1mbuildCommand[0m' of derivation '[35;1mhome-manager-generation[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:68:17[0m:
+┃            67|         enableParallelBuilding = true;
+┃            68|         inherit buildCommand name;
+┃              |                 [31;1m^[0m
+┃            69|         passAsFile = [ "buildCommand" ]
+┃ 
+┃        … while calling the '[35;1mgetAttr[0m' builtin
+┃          [34;1mat [35;1m/builtin/derivation.nix:1:500[0m:
+┃        … while calling the '[35;1mderivationStrict[0m' builtin
+┃          [34;1mat [35;1m/builtin/derivation.nix:1:208[0m:
+┃        … while evaluating derivation '[35;1mactivation-script[0m'
+┃          whose name attribute is located at [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/stdenv/generic/make-derivation.nix:334:7[0m
+┃ 
+┃        … while evaluating attribute '[35;1mtext[0m' of derivation '[35;1mactivation-script[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:103:17[0m:
+┃           102|       ({
+┃           103|         inherit text executable checkPhase allowSubstitutes preferLocalBuild;
+┃              |                 [31;1m^[0m
+┃           104|         passAsFile = [ "text" ]
+┃ 
+┃        … while calling the '[35;1mconcatStringsSep[0m' builtin
+┃          [34;1mat [35;1m/nix/store/lk3d5lnbsxyv8bkr9vyqc589ivcgnz9n-source/modules/home-environment.nix:673:13[0m:
+┃           672|           if sortedCommands ? result then
+┃           673|             concatStringsSep "\n" (map mkCmd sortedCommands.result)
+┃              |             [31;1m^[0m
+┃           674|           else
+┃ 
+┃        … while calling [35;1m'mkCmd'[0m
+┃          [34;1mat [35;1m/nix/store/lk3d5lnbsxyv8bkr9vyqc589ivcgnz9n-source/modules/home-environment.nix:666:17[0m:
+┃           665|       let
+┃           666|         mkCmd = res: ''
+┃              |                 [31;1m^[0m
+┃           667|             _iNote "Activating %s" "${res.name}"
+┃ 
+┃        … while evaluating the attribute '[35;1mdata[0m'
+┃          [34;1mat [35;1m/nix/store/lk3d5lnbsxyv8bkr9vyqc589ivcgnz9n-source/modules/lib/dag.nix:89:43[0m:
+┃            88|     in if sorted ? result then {
+┃            89|       result = map (v: { inherit (v) name data; }) sorted.result;
+┃              |                                           [31;1m^[0m
+┃            90|     } else
+┃ 
+┃        … while evaluating the attribute '[35;1mdata[0m'
+┃          [34;1mat [35;1m/nix/store/lk3d5lnbsxyv8bkr9vyqc589ivcgnz9n-source/modules/lib/dag.nix:83:9[0m:
+┃            82|         name = n;
+┃            83|         data = v.data;
+┃              |         [31;1m^[0m
+┃            84|         after = v.after ++ dagBefore dag n;
+┃ 
+┃        … from call site
+┃          [34;1mat [35;1m/nix/store/lk3d5lnbsxyv8bkr9vyqc589ivcgnz9n-source/modules/lib/dag.nix:83:16[0m:
+┃            82|         name = n;
+┃            83|         data = v.data;
+┃              |                [31;1m^[0m
+┃            84|         after = v.after ++ dagBefore dag n;
+┃ 
+┃        … while calling [35;1manonymous lambda[0m
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/attrsets.nix:1205:18[0m:
+┃          1204|         mapAttrs
+┃          1205|           (name: value:
+┃              |                  [31;1m^[0m
+┃          1206|             if isAttrs value && cond value
+┃ 
+┃        … from call site
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/attrsets.nix:1208:18[0m:
+┃          1207|             then recurse (path ++ [ name ]) value
+┃          1208|             else f (path ++ [ name ]) value);
+┃              |                  [31;1m^[0m
+┃          1209|     in
+┃ 
+┃        … while calling [35;1manonymous lambda[0m
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:254:72[0m:
+┃           253|           # For definitions that have an associated option
+┃           254|           declaredConfig = mapAttrsRecursiveCond (v: ! isOption v) (_: v: v.value) options;
+┃              |                                                                        [31;1m^[0m
+┃           255|
+┃ 
+┃        … while evaluating the attribute '[35;1mvalue[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:821:9[0m:
+┃           820|     in warnDeprecation opt //
+┃           821|       { value = addErrorContext "while evaluating the option `${showOption loc}':" value;
+┃              |         [31;1m^[0m
+┃           822|         inherit (res.defsFinal') highestPrio;
+┃ 
+┃        … while calling the '[35;1maddErrorContext[0m' builtin
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:821:17[0m:
+┃           820|     in warnDeprecation opt //
+┃           821|       { value = addErrorContext "while evaluating the option `${showOption loc}':" value;
+┃              |                 [31;1m^[0m
+┃           822|         inherit (res.defsFinal') highestPrio;
+┃ 
+┃        … while evaluating the option `home.activation.installPackages.data':
+┃ 
+┃        … while evaluating the attribute '[35;1mmergedValue[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:856:5[0m:
+┃           855|     # Type-check the remaining definitions, and merge them. Or throw if no definitions.
+┃           856|     mergedValue =
+┃              |     [31;1m^[0m
+┃           857|       if isDefined then
+┃ 
+┃        … while evaluating a branch condition
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:857:7[0m:
+┃           856|     mergedValue =
+┃           857|       if isDefined then
+┃              |       [31;1m^[0m
+┃           858|         if all (def: type.check def.value) defsFinal then type.merge loc defsFinal
+┃ 
+┃        … while evaluating the attribute '[35;1mvalues[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:850:9[0m:
+┃           849|       in {
+┃           850|         values = defs''';
+┃              |         [31;1m^[0m
+┃           851|         inherit (defs'') highestPrio;
+┃ 
+┃        … while evaluating a branch condition
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:846:11[0m:
+┃           845|           # Avoid sorting if we don't have to.
+┃           846|           if any (def: def.value._type or "" == "order") defs''.values
+┃              |           [31;1m^[0m
+┃           847|           then sortProperties defs''.values
+┃ 
+┃        … while calling the '[35;1many[0m' builtin
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:846:14[0m:
+┃           845|           # Avoid sorting if we don't have to.
+┃           846|           if any (def: def.value._type or "" == "order") defs''.values
+┃              |              [31;1m^[0m
+┃           847|           then sortProperties defs''.values
+┃ 
+┃        … while evaluating the attribute '[35;1mvalues[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:949:7[0m:
+┃           948|     in {
+┃           949|       values = concatMap (def: if getPrio def == highestPrio then [(strip def)] else []) defs;
+┃              |       [31;1m^[0m
+┃           950|       inherit highestPrio;
+┃ 
+┃        … while calling the '[35;1mconcatMap[0m' builtin
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:949:16[0m:
+┃           948|     in {
+┃           949|       values = concatMap (def: if getPrio def == highestPrio then [(strip def)] else []) defs;
+┃              |                [31;1m^[0m
+┃           950|       inherit highestPrio;
+┃ 
+┃        … while calling the '[35;1mconcatMap[0m' builtin
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:836:17[0m:
+┃           835|         # Process mkMerge and mkIf properties.
+┃           836|         defs' = concatMap (m:
+┃              |                 [31;1m^[0m
+┃           837|           map (value: { inherit (m) file; inherit value; }) (addErrorContext "while evaluating definitions from `${m.file}':" (dischargeProperties m.value))
+┃ 
+┃        … while calling [35;1manonymous lambda[0m
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:836:28[0m:
+┃           835|         # Process mkMerge and mkIf properties.
+┃           836|         defs' = concatMap (m:
+┃              |                            [31;1m^[0m
+┃           837|           map (value: { inherit (m) file; inherit value; }) (addErrorContext "while evaluating definitions from `${m.file}':" (dischargeProperties m.value))
+┃ 
+┃        … while calling the '[35;1mmap[0m' builtin
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:837:11[0m:
+┃           836|         defs' = concatMap (m:
+┃           837|           map (value: { inherit (m) file; inherit value; }) (addErrorContext "while evaluating definitions from `${m.file}':" (dischargeProperties m.value))
+┃              |           [31;1m^[0m
+┃           838|         ) defs;
+┃ 
+┃        … while calling the '[35;1maddErrorContext[0m' builtin
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:837:62[0m:
+┃           836|         defs' = concatMap (m:
+┃           837|           map (value: { inherit (m) file; inherit value; }) (addErrorContext "while evaluating definitions from `${m.file}':" (dischargeProperties m.value))
+┃              |                                                              [31;1m^[0m
+┃           838|         ) defs;
+┃ 
+┃        … while evaluating definitions from `/nix/store/lk3d5lnbsxyv8bkr9vyqc589ivcgnz9n-source/modules/home-environment.nix':
+┃ 
+┃        … from call site
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:837:128[0m:
+┃           836|         defs' = concatMap (m:
+┃           837|           map (value: { inherit (m) file; inherit value; }) (addErrorContext "while evaluating definitions from `${m.file}':" (dischargeProperties m.value))
+┃              |                                                                                                                                [31;1m^[0m
+┃           838|         ) defs;
+┃ 
+┃        … while calling [35;1m'dischargeProperties'[0m
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:908:25[0m:
+┃           907|   */
+┃           908|   dischargeProperties = def:
+┃              |                         [31;1m^[0m
+┃           909|     if def._type or "" == "merge" then
+┃ 
+┃        … while evaluating a branch condition
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:909:5[0m:
+┃           908|   dischargeProperties = def:
+┃           909|     if def._type or "" == "merge" then
+┃              |     [31;1m^[0m
+┃           910|       concatMap dischargeProperties def.contents
+┃ 
+┃        … while evaluating the attribute '[35;1mvalue[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:619:53[0m:
+┃           618|                 (n: value:
+┃           619|                   [{ inherit (module) file; inherit value; }]
+┃              |                                                     [31;1m^[0m
+┃           620|                 )
+┃ 
+┃        … while calling the '[35;1mgetAttr[0m' builtin
+┃          [34;1mat [35;1m/builtin/derivation.nix:1:500[0m:
+┃        … while calling the '[35;1mderivationStrict[0m' builtin
+┃          [34;1mat [35;1m/builtin/derivation.nix:1:208[0m:
+┃        … while evaluating derivation '[35;1mhome-manager-path[0m'
+┃          whose name attribute is located at [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/stdenv/generic/make-derivation.nix:334:7[0m
+┃ 
+┃        … while evaluating attribute '[35;1mpassAsFile[0m' of derivation '[35;1mhome-manager-path[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:69:9[0m:
+┃            68|         inherit buildCommand name;
+┃            69|         passAsFile = [ "buildCommand" ]
+┃              |         [31;1m^[0m
+┃            70|           ++ (derivationArgs.passAsFile or [ ]);
+┃ 
+┃        … while evaluating the attribute '[35;1mpassAsFile[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:76:5[0m:
+┃            75|     # XXX: The size is somewhat arbitrary
+┃            76|     passAsFile = if builtins.stringLength pkgs >= 128*1024 then [ "pkgs" ] else [ ];
+┃              |     [31;1m^[0m
+┃            77|   }
+┃ 
+┃        … while evaluating a branch condition
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:76:18[0m:
+┃            75|     # XXX: The size is somewhat arbitrary
+┃            76|     passAsFile = if builtins.stringLength pkgs >= 128*1024 then [ "pkgs" ] else [ ];
+┃              |                  [31;1m^[0m
+┃            77|   }
+┃ 
+┃        … in the argument of the not operator
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:76:48[0m:
+┃            75|     # XXX: The size is somewhat arbitrary
+┃            76|     passAsFile = if builtins.stringLength pkgs >= 128*1024 then [ "pkgs" ] else [ ];
+┃              |                                                [31;1m^[0m
+┃            77|   }
+┃ 
+┃        … while calling the '[35;1mlessThan[0m' builtin
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:76:48[0m:
+┃            75|     # XXX: The size is somewhat arbitrary
+┃            76|     passAsFile = if builtins.stringLength pkgs >= 128*1024 then [ "pkgs" ] else [ ];
+┃              |                                                [31;1m^[0m
+┃            77|   }
+┃ 
+┃        … while calling the '[35;1mstringLength[0m' builtin
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:76:21[0m:
+┃            75|     # XXX: The size is somewhat arbitrary
+┃            76|     passAsFile = if builtins.stringLength pkgs >= 128*1024 then [ "pkgs" ] else [ ];
+┃              |                     [31;1m^[0m
+┃            77|   }
+┃ 
+┃        … while calling the '[35;1mtoJSON[0m' builtin
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:58:12[0m:
+┃            57|             nativeBuildInputs buildInputs;
+┃            58|     pkgs = builtins.toJSON (map (drv: {
+┃              |            [31;1m^[0m
+┃            59|       paths =
+┃ 
+┃        … while evaluating list element at index [35;1m120[0m
+┃ 
+┃        … while evaluating attribute '[35;1mpaths[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:59:7[0m:
+┃            58|     pkgs = builtins.toJSON (map (drv: {
+┃            59|       paths =
+┃              |       [31;1m^[0m
+┃            60|         # First add the usual output(s): respect if user has chosen explicitly,
+┃ 
+┃        … while evaluating list element at index [35;1m0[0m
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:59:7[0m:
+┃            58|     pkgs = builtins.toJSON (map (drv: {
+┃            59|       paths =
+┃              |       [31;1m^[0m
+┃            60|         # First add the usual output(s): respect if user has chosen explicitly,
+┃ 
+┃        … while calling the '[35;1mgetAttr[0m' builtin
+┃          [34;1mat [35;1m/builtin/derivation.nix:1:500[0m:
+┃        … while calling the '[35;1mderivationStrict[0m' builtin
+┃          [34;1mat [35;1m/builtin/derivation.nix:1:208[0m:
+┃        … while evaluating derivation '[35;1mneovim-0.10.0[0m'
+┃          whose name attribute is located at [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/stdenv/generic/make-derivation.nix:334:7[0m
+┃ 
+┃        … while evaluating attribute '[35;1minstallPhase[0m' of derivation '[35;1mneovim-0.10.0[0m'
+┃          [34;1mat [35;1m/nix/store/iqjb7l72w8zkmiyid9zghprj7x9ndsrs-source/wrapper.nix:214:5[0m:
+┃           213|
+┃           214|     installPhase = ''
+┃              |     [31;1m^[0m
+┃           215|       runHook preInstall
+┃ 
+┃        … while calling the '[35;1mgetAttr[0m' builtin
+┃          [34;1mat [35;1m/builtin/derivation.nix:1:500[0m:
+┃        … while calling the '[35;1mderivationStrict[0m' builtin
+┃          [34;1mat [35;1m/builtin/derivation.nix:1:208[0m:
+┃        … while evaluating derivation '[35;1minit.lua[0m'
+┃          whose name attribute is located at [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/stdenv/generic/make-derivation.nix:334:7[0m
+┃ 
+┃        … while evaluating attribute '[35;1mtext[0m' of derivation '[35;1minit.lua[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:103:17[0m:
+┃           102|       ({
+┃           103|         inherit text executable checkPhase allowSubstitutes preferLocalBuild;
+┃              |                 [31;1m^[0m
+┃           104|         passAsFile = [ "text" ]
+┃ 
+┃        … from call site
+┃          [34;1mat [35;1m/nix/store/iqjb7l72w8zkmiyid9zghprj7x9ndsrs-source/wrapper.nix:188:9[0m:
+┃           187|
+┃           188|       ${lib.optionalString (allPlugins != [ ]) ''
+┃              |         [31;1m^[0m
+┃           189|         vim.opt.packpath:append('${packedDir}')
+┃ 
+┃        … while calling [35;1m'optionalString'[0m
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/strings.nix:268:5[0m:
+┃           267|     # String to return if condition is true
+┃           268|     string: if cond then string else "";
+┃              |     [31;1m^[0m
+┃           269|
+┃ 
+┃        … while calling the '[35;1mgetAttr[0m' builtin
+┃          [34;1mat [35;1m/builtin/derivation.nix:1:500[0m:
+┃        … while calling the '[35;1mderivationStrict[0m' builtin
+┃          [34;1mat [35;1m/builtin/derivation.nix:1:208[0m:
+┃        … while evaluating derivation '[35;1mneovim-pack-dir[0m'
+┃          whose name attribute is located at [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/stdenv/generic/make-derivation.nix:334:7[0m
+┃ 
+┃        … while evaluating attribute '[35;1mpassAsFile[0m' of derivation '[35;1mneovim-pack-dir[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:69:9[0m:
+┃            68|         inherit buildCommand name;
+┃            69|         passAsFile = [ "buildCommand" ]
+┃              |         [31;1m^[0m
+┃            70|           ++ (derivationArgs.passAsFile or [ ]);
+┃ 
+┃        [35;1m(6 duplicate frames omitted)[0m
+┃ 
+┃        … while evaluating list element at index [35;1m0[0m
+┃ 
+┃        … while evaluating attribute '[35;1mpaths[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:59:7[0m:
+┃            58|     pkgs = builtins.toJSON (map (drv: {
+┃            59|       paths =
+┃              |       [31;1m^[0m
+┃            60|         # First add the usual output(s): respect if user has chosen explicitly,
+┃ 
+┃        … while evaluating list element at index [35;1m0[0m
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:59:7[0m:
+┃            58|     pkgs = builtins.toJSON (map (drv: {
+┃            59|       paths =
+┃              |       [31;1m^[0m
+┃            60|         # First add the usual output(s): respect if user has chosen explicitly,
+┃ 
+┃        … while calling the '[35;1mgetAttr[0m' builtin
+┃          [34;1mat [35;1m/builtin/derivation.nix:1:500[0m:
+┃        … while calling the '[35;1mderivationStrict[0m' builtin
+┃          [34;1mat [35;1m/builtin/derivation.nix:1:208[0m:
+┃        … while evaluating derivation '[35;1mpackdir[0m'
+┃          whose name attribute is located at [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/stdenv/generic/make-derivation.nix:334:7[0m
+┃ 
+┃        … while evaluating attribute '[35;1mbuildCommand[0m' of derivation '[35;1mpackdir[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:68:17[0m:
+┃            67|         enableParallelBuilding = true;
+┃            68|         inherit buildCommand name;
+┃              |                 [31;1m^[0m
+┃            69|         passAsFile = [ "buildCommand" ]
+┃ 
+┃        … while calling the '[35;1mconcatStringsSep[0m' builtin
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:545:9[0m:
+┃           544|       cd $out
+┃           545|       ${lib.concatStrings linkCommands}
+┃              |         [31;1m^[0m
+┃           546|     '';
+┃ 
+┃        … from call site
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:530:22[0m:
+┃           529|
+┃           530|       linkCommands = lib.mapAttrsToList
+┃              |                      [31;1m^[0m
+┃           531|         (name: path: ''
+┃ 
+┃        … while calling [35;1m'mapAttrsToList'[0m
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/attrsets.nix:1095:5[0m:
+┃          1094|     f:
+┃          1095|     attrs:
+┃              |     [31;1m^[0m
+┃          1096|     map (name: f name attrs.${name}) (attrNames attrs);
+┃ 
+┃        … while calling the '[35;1mmap[0m' builtin
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/attrsets.nix:1096:5[0m:
+┃          1095|     attrs:
+┃          1096|     map (name: f name attrs.${name}) (attrNames attrs);
+┃              |     [31;1m^[0m
+┃          1097|
+┃ 
+┃        … while calling the '[35;1mattrNames[0m' builtin
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/attrsets.nix:1096:39[0m:
+┃          1095|     attrs:
+┃          1096|     map (name: f name attrs.${name}) (attrNames attrs);
+┃              |                                       [31;1m^[0m
+┃          1097|
+┃ 
+┃        … from call site
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:527:43[0m:
+┃           526|         # We do this foldl to have last-wins semantics in case of repeated entries
+┃           527|         else if (lib.isList entries) then lib.foldl (a: b: a // { "${b.name}" = b.path; }) { } entries
+┃              |                                           [31;1m^[0m
+┃           528|         else throw "linkFarm entries must be either attrs or a list!";
+┃ 
+┃        … while calling [35;1m'foldl'[0m
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/lists.nix:178:20[0m:
+┃           177|   */
+┃           178|   foldl = op: nul: list:
+┃              |                    [31;1m^[0m
+┃           179|     let
+┃ 
+┃        … from call site
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/lists.nix:184:8[0m:
+┃           183|         else op (foldl' (n - 1)) (elemAt list n);
+┃           184|     in foldl' (length list - 1);
+┃              |        [31;1m^[0m
+┃           185|
+┃ 
+┃        … while calling [35;1m'foldl''[0m
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/lists.nix:180:16[0m:
+┃           179|     let
+┃           180|       foldl' = n:
+┃              |                [31;1m^[0m
+┃           181|         if n == -1
+┃ 
+┃        … from call site
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/lists.nix:183:14[0m:
+┃           182|         then nul
+┃           183|         else op (foldl' (n - 1)) (elemAt list n);
+┃              |              [31;1m^[0m
+┃           184|     in foldl' (length list - 1);
+┃ 
+┃        … while calling [35;1manonymous lambda[0m
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:527:57[0m:
+┃           526|         # We do this foldl to have last-wins semantics in case of repeated entries
+┃           527|         else if (lib.isList entries) then lib.foldl (a: b: a // { "${b.name}" = b.path; }) { } entries
+┃              |                                                         [31;1m^[0m
+┃           528|         else throw "linkFarm entries must be either attrs or a list!";
+┃ 
+┃        … in the left operand of the update (//) operator
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:527:62[0m:
+┃           526|         # We do this foldl to have last-wins semantics in case of repeated entries
+┃           527|         else if (lib.isList entries) then lib.foldl (a: b: a // { "${b.name}" = b.path; }) { } entries
+┃              |                                                              [31;1m^[0m
+┃           528|         else throw "linkFarm entries must be either attrs or a list!";
+┃ 
+┃        … from call site
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/lists.nix:183:18[0m:
+┃           182|         then nul
+┃           183|         else op (foldl' (n - 1)) (elemAt list n);
+┃              |                  [31;1m^[0m
+┃           184|     in foldl' (length list - 1);
+┃ 
+┃        [35;1m(43 duplicate frames omitted)[0m
+┃ 
+┃        … in the right operand of the update (//) operator
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:527:62[0m:
+┃           526|         # We do this foldl to have last-wins semantics in case of repeated entries
+┃           527|         else if (lib.isList entries) then lib.foldl (a: b: a // { "${b.name}" = b.path; }) { } entries
+┃              |                                                              [31;1m^[0m
+┃           528|         else throw "linkFarm entries must be either attrs or a list!";
+┃ 
+┃        … while evaluating the attribute '[35;1mname[0m'
+┃          [34;1mat [35;1m/nix/store/iqjb7l72w8zkmiyid9zghprj7x9ndsrs-source/wrapper.nix:73:15[0m:
+┃            72|             map (drv: {
+┃            73|               name = "${packPath}/start/${lib.getName drv}";
+┃              |               [31;1m^[0m
+┃            74|               path = drv;
+┃ 
+┃        … from call site
+┃          [34;1mat [35;1m/nix/store/iqjb7l72w8zkmiyid9zghprj7x9ndsrs-source/wrapper.nix:73:43[0m:
+┃            72|             map (drv: {
+┃            73|               name = "${packPath}/start/${lib.getName drv}";
+┃              |                                           [31;1m^[0m
+┃            74|               path = drv;
+┃ 
+┃        … while calling [35;1manonymous lambda[0m
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/strings.nix:731:6[0m:
+┃           730|     parse = drv: (parseDrvName drv).name;
+┃           731|   in x:
+┃              |      [31;1m^[0m
+┃           732|     if isString x
+┃ 
+┃        … from call site
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/strings.nix:734:22[0m:
+┃           733|     then parse x
+┃           734|     else x.pname or (parse x.name);
+┃              |                      [31;1m^[0m
+┃           735|
+┃ 
+┃        … while calling [35;1m'parse'[0m
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/strings.nix:730:13[0m:
+┃           729|   getName = let
+┃           730|     parse = drv: (parseDrvName drv).name;
+┃              |             [31;1m^[0m
+┃           731|   in x:
+┃ 
+┃        … while calling the '[35;1mparseDrvName[0m' builtin
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/strings.nix:730:19[0m:
+┃           729|   getName = let
+┃           730|     parse = drv: (parseDrvName drv).name;
+┃              |                   [31;1m^[0m
+┃           731|   in x:
+┃ 
+┃        … while evaluating the first argument passed to builtins.parseDrvName
+┃ 
+┃        [31;1merror:[0m attribute '[35;1mname[0m' missing
+┃        [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/strings.nix:734:28[0m:
+┃           733|     then parse x
+┃           734|     else x.pname or (parse x.name);
+┃              |                            [31;1m^[0m
+┃           735|[0m
+┣━━━      
+┗━ ∑ [1m⏱ 14s[0m[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K[1F[2K┏━[1;31m 1 Errors: [0m
+┃ [31;1merror:[0m
+┃        … while calling the '[35;1mderivationStrict[0m' builtin
+┃          [34;1mat [35;1m/builtin/derivation.nix:1:208[0m:
+┃        … while evaluating derivation '[35;1mhome-manager-generation[0m'
+┃          whose name attribute is located at [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/stdenv/generic/make-derivation.nix:334:7[0m
+┃ 
+┃        … while evaluating attribute '[35;1mbuildCommand[0m' of derivation '[35;1mhome-manager-generation[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:68:17[0m:
+┃            67|         enableParallelBuilding = true;
+┃            68|         inherit buildCommand name;
+┃              |                 [31;1m^[0m
+┃            69|         passAsFile = [ "buildCommand" ]
+┃ 
+┃        … while calling the '[35;1mgetAttr[0m' builtin
+┃          [34;1mat [35;1m/builtin/derivation.nix:1:500[0m:
+┃        … while calling the '[35;1mderivationStrict[0m' builtin
+┃          [34;1mat [35;1m/builtin/derivation.nix:1:208[0m:
+┃        … while evaluating derivation '[35;1mactivation-script[0m'
+┃          whose name attribute is located at [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/stdenv/generic/make-derivation.nix:334:7[0m
+┃ 
+┃        … while evaluating attribute '[35;1mtext[0m' of derivation '[35;1mactivation-script[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:103:17[0m:
+┃           102|       ({
+┃           103|         inherit text executable checkPhase allowSubstitutes preferLocalBuild;
+┃              |                 [31;1m^[0m
+┃           104|         passAsFile = [ "text" ]
+┃ 
+┃        … while calling the '[35;1mconcatStringsSep[0m' builtin
+┃          [34;1mat [35;1m/nix/store/lk3d5lnbsxyv8bkr9vyqc589ivcgnz9n-source/modules/home-environment.nix:673:13[0m:
+┃           672|           if sortedCommands ? result then
+┃           673|             concatStringsSep "\n" (map mkCmd sortedCommands.result)
+┃              |             [31;1m^[0m
+┃           674|           else
+┃ 
+┃        … while calling [35;1m'mkCmd'[0m
+┃          [34;1mat [35;1m/nix/store/lk3d5lnbsxyv8bkr9vyqc589ivcgnz9n-source/modules/home-environment.nix:666:17[0m:
+┃           665|       let
+┃           666|         mkCmd = res: ''
+┃              |                 [31;1m^[0m
+┃           667|             _iNote "Activating %s" "${res.name}"
+┃ 
+┃        … while evaluating the attribute '[35;1mdata[0m'
+┃          [34;1mat [35;1m/nix/store/lk3d5lnbsxyv8bkr9vyqc589ivcgnz9n-source/modules/lib/dag.nix:89:43[0m:
+┃            88|     in if sorted ? result then {
+┃            89|       result = map (v: { inherit (v) name data; }) sorted.result;
+┃              |                                           [31;1m^[0m
+┃            90|     } else
+┃ 
+┃        … while evaluating the attribute '[35;1mdata[0m'
+┃          [34;1mat [35;1m/nix/store/lk3d5lnbsxyv8bkr9vyqc589ivcgnz9n-source/modules/lib/dag.nix:83:9[0m:
+┃            82|         name = n;
+┃            83|         data = v.data;
+┃              |         [31;1m^[0m
+┃            84|         after = v.after ++ dagBefore dag n;
+┃ 
+┃        … from call site
+┃          [34;1mat [35;1m/nix/store/lk3d5lnbsxyv8bkr9vyqc589ivcgnz9n-source/modules/lib/dag.nix:83:16[0m:
+┃            82|         name = n;
+┃            83|         data = v.data;
+┃              |                [31;1m^[0m
+┃            84|         after = v.after ++ dagBefore dag n;
+┃ 
+┃        … while calling [35;1manonymous lambda[0m
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/attrsets.nix:1205:18[0m:
+┃          1204|         mapAttrs
+┃          1205|           (name: value:
+┃              |                  [31;1m^[0m
+┃          1206|             if isAttrs value && cond value
+┃ 
+┃        … from call site
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/attrsets.nix:1208:18[0m:
+┃          1207|             then recurse (path ++ [ name ]) value
+┃          1208|             else f (path ++ [ name ]) value);
+┃              |                  [31;1m^[0m
+┃          1209|     in
+┃ 
+┃        … while calling [35;1manonymous lambda[0m
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:254:72[0m:
+┃           253|           # For definitions that have an associated option
+┃           254|           declaredConfig = mapAttrsRecursiveCond (v: ! isOption v) (_: v: v.value) options;
+┃              |                                                                        [31;1m^[0m
+┃           255|
+┃ 
+┃        … while evaluating the attribute '[35;1mvalue[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:821:9[0m:
+┃           820|     in warnDeprecation opt //
+┃           821|       { value = addErrorContext "while evaluating the option `${showOption loc}':" value;
+┃              |         [31;1m^[0m
+┃           822|         inherit (res.defsFinal') highestPrio;
+┃ 
+┃        … while calling the '[35;1maddErrorContext[0m' builtin
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:821:17[0m:
+┃           820|     in warnDeprecation opt //
+┃           821|       { value = addErrorContext "while evaluating the option `${showOption loc}':" value;
+┃              |                 [31;1m^[0m
+┃           822|         inherit (res.defsFinal') highestPrio;
+┃ 
+┃        … while evaluating the option `home.activation.installPackages.data':
+┃ 
+┃        … while evaluating the attribute '[35;1mmergedValue[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:856:5[0m:
+┃           855|     # Type-check the remaining definitions, and merge them. Or throw if no definitions.
+┃           856|     mergedValue =
+┃              |     [31;1m^[0m
+┃           857|       if isDefined then
+┃ 
+┃        … while evaluating a branch condition
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:857:7[0m:
+┃           856|     mergedValue =
+┃           857|       if isDefined then
+┃              |       [31;1m^[0m
+┃           858|         if all (def: type.check def.value) defsFinal then type.merge loc defsFinal
+┃ 
+┃        … while evaluating the attribute '[35;1mvalues[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:850:9[0m:
+┃           849|       in {
+┃           850|         values = defs''';
+┃              |         [31;1m^[0m
+┃           851|         inherit (defs'') highestPrio;
+┃ 
+┃        … while evaluating a branch condition
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:846:11[0m:
+┃           845|           # Avoid sorting if we don't have to.
+┃           846|           if any (def: def.value._type or "" == "order") defs''.values
+┃              |           [31;1m^[0m
+┃           847|           then sortProperties defs''.values
+┃ 
+┃        … while calling the '[35;1many[0m' builtin
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:846:14[0m:
+┃           845|           # Avoid sorting if we don't have to.
+┃           846|           if any (def: def.value._type or "" == "order") defs''.values
+┃              |              [31;1m^[0m
+┃           847|           then sortProperties defs''.values
+┃ 
+┃        … while evaluating the attribute '[35;1mvalues[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:949:7[0m:
+┃           948|     in {
+┃           949|       values = concatMap (def: if getPrio def == highestPrio then [(strip def)] else []) defs;
+┃              |       [31;1m^[0m
+┃           950|       inherit highestPrio;
+┃ 
+┃        … while calling the '[35;1mconcatMap[0m' builtin
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:949:16[0m:
+┃           948|     in {
+┃           949|       values = concatMap (def: if getPrio def == highestPrio then [(strip def)] else []) defs;
+┃              |                [31;1m^[0m
+┃           950|       inherit highestPrio;
+┃ 
+┃        … while calling the '[35;1mconcatMap[0m' builtin
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:836:17[0m:
+┃           835|         # Process mkMerge and mkIf properties.
+┃           836|         defs' = concatMap (m:
+┃              |                 [31;1m^[0m
+┃           837|           map (value: { inherit (m) file; inherit value; }) (addErrorContext "while evaluating definitions from `${m.file}':" (dischargeProperties m.value))
+┃ 
+┃        … while calling [35;1manonymous lambda[0m
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:836:28[0m:
+┃           835|         # Process mkMerge and mkIf properties.
+┃           836|         defs' = concatMap (m:
+┃              |                            [31;1m^[0m
+┃           837|           map (value: { inherit (m) file; inherit value; }) (addErrorContext "while evaluating definitions from `${m.file}':" (dischargeProperties m.value))
+┃ 
+┃        … while calling the '[35;1mmap[0m' builtin
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:837:11[0m:
+┃           836|         defs' = concatMap (m:
+┃           837|           map (value: { inherit (m) file; inherit value; }) (addErrorContext "while evaluating definitions from `${m.file}':" (dischargeProperties m.value))
+┃              |           [31;1m^[0m
+┃           838|         ) defs;
+┃ 
+┃        … while calling the '[35;1maddErrorContext[0m' builtin
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:837:62[0m:
+┃           836|         defs' = concatMap (m:
+┃           837|           map (value: { inherit (m) file; inherit value; }) (addErrorContext "while evaluating definitions from `${m.file}':" (dischargeProperties m.value))
+┃              |                                                              [31;1m^[0m
+┃           838|         ) defs;
+┃ 
+┃        … while evaluating definitions from `/nix/store/lk3d5lnbsxyv8bkr9vyqc589ivcgnz9n-source/modules/home-environment.nix':
+┃ 
+┃        … from call site
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:837:128[0m:
+┃           836|         defs' = concatMap (m:
+┃           837|           map (value: { inherit (m) file; inherit value; }) (addErrorContext "while evaluating definitions from `${m.file}':" (dischargeProperties m.value))
+┃              |                                                                                                                                [31;1m^[0m
+┃           838|         ) defs;
+┃ 
+┃        … while calling [35;1m'dischargeProperties'[0m
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:908:25[0m:
+┃           907|   */
+┃           908|   dischargeProperties = def:
+┃              |                         [31;1m^[0m
+┃           909|     if def._type or "" == "merge" then
+┃ 
+┃        … while evaluating a branch condition
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:909:5[0m:
+┃           908|   dischargeProperties = def:
+┃           909|     if def._type or "" == "merge" then
+┃              |     [31;1m^[0m
+┃           910|       concatMap dischargeProperties def.contents
+┃ 
+┃        … while evaluating the attribute '[35;1mvalue[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/modules.nix:619:53[0m:
+┃           618|                 (n: value:
+┃           619|                   [{ inherit (module) file; inherit value; }]
+┃              |                                                     [31;1m^[0m
+┃           620|                 )
+┃ 
+┃        … while calling the '[35;1mgetAttr[0m' builtin
+┃          [34;1mat [35;1m/builtin/derivation.nix:1:500[0m:
+┃        … while calling the '[35;1mderivationStrict[0m' builtin
+┃          [34;1mat [35;1m/builtin/derivation.nix:1:208[0m:
+┃        … while evaluating derivation '[35;1mhome-manager-path[0m'
+┃          whose name attribute is located at [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/stdenv/generic/make-derivation.nix:334:7[0m
+┃ 
+┃        … while evaluating attribute '[35;1mpassAsFile[0m' of derivation '[35;1mhome-manager-path[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:69:9[0m:
+┃            68|         inherit buildCommand name;
+┃            69|         passAsFile = [ "buildCommand" ]
+┃              |         [31;1m^[0m
+┃            70|           ++ (derivationArgs.passAsFile or [ ]);
+┃ 
+┃        … while evaluating the attribute '[35;1mpassAsFile[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:76:5[0m:
+┃            75|     # XXX: The size is somewhat arbitrary
+┃            76|     passAsFile = if builtins.stringLength pkgs >= 128*1024 then [ "pkgs" ] else [ ];
+┃              |     [31;1m^[0m
+┃            77|   }
+┃ 
+┃        … while evaluating a branch condition
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:76:18[0m:
+┃            75|     # XXX: The size is somewhat arbitrary
+┃            76|     passAsFile = if builtins.stringLength pkgs >= 128*1024 then [ "pkgs" ] else [ ];
+┃              |                  [31;1m^[0m
+┃            77|   }
+┃ 
+┃        … in the argument of the not operator
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:76:48[0m:
+┃            75|     # XXX: The size is somewhat arbitrary
+┃            76|     passAsFile = if builtins.stringLength pkgs >= 128*1024 then [ "pkgs" ] else [ ];
+┃              |                                                [31;1m^[0m
+┃            77|   }
+┃ 
+┃        … while calling the '[35;1mlessThan[0m' builtin
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:76:48[0m:
+┃            75|     # XXX: The size is somewhat arbitrary
+┃            76|     passAsFile = if builtins.stringLength pkgs >= 128*1024 then [ "pkgs" ] else [ ];
+┃              |                                                [31;1m^[0m
+┃            77|   }
+┃ 
+┃        … while calling the '[35;1mstringLength[0m' builtin
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:76:21[0m:
+┃            75|     # XXX: The size is somewhat arbitrary
+┃            76|     passAsFile = if builtins.stringLength pkgs >= 128*1024 then [ "pkgs" ] else [ ];
+┃              |                     [31;1m^[0m
+┃            77|   }
+┃ 
+┃        … while calling the '[35;1mtoJSON[0m' builtin
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:58:12[0m:
+┃            57|             nativeBuildInputs buildInputs;
+┃            58|     pkgs = builtins.toJSON (map (drv: {
+┃              |            [31;1m^[0m
+┃            59|       paths =
+┃ 
+┃        … while evaluating list element at index [35;1m120[0m
+┃ 
+┃        … while evaluating attribute '[35;1mpaths[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:59:7[0m:
+┃            58|     pkgs = builtins.toJSON (map (drv: {
+┃            59|       paths =
+┃              |       [31;1m^[0m
+┃            60|         # First add the usual output(s): respect if user has chosen explicitly,
+┃ 
+┃        … while evaluating list element at index [35;1m0[0m
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:59:7[0m:
+┃            58|     pkgs = builtins.toJSON (map (drv: {
+┃            59|       paths =
+┃              |       [31;1m^[0m
+┃            60|         # First add the usual output(s): respect if user has chosen explicitly,
+┃ 
+┃        … while calling the '[35;1mgetAttr[0m' builtin
+┃          [34;1mat [35;1m/builtin/derivation.nix:1:500[0m:
+┃        … while calling the '[35;1mderivationStrict[0m' builtin
+┃          [34;1mat [35;1m/builtin/derivation.nix:1:208[0m:
+┃        … while evaluating derivation '[35;1mneovim-0.10.0[0m'
+┃          whose name attribute is located at [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/stdenv/generic/make-derivation.nix:334:7[0m
+┃ 
+┃        … while evaluating attribute '[35;1minstallPhase[0m' of derivation '[35;1mneovim-0.10.0[0m'
+┃          [34;1mat [35;1m/nix/store/iqjb7l72w8zkmiyid9zghprj7x9ndsrs-source/wrapper.nix:214:5[0m:
+┃           213|
+┃           214|     installPhase = ''
+┃              |     [31;1m^[0m
+┃           215|       runHook preInstall
+┃ 
+┃        … while calling the '[35;1mgetAttr[0m' builtin
+┃          [34;1mat [35;1m/builtin/derivation.nix:1:500[0m:
+┃        … while calling the '[35;1mderivationStrict[0m' builtin
+┃          [34;1mat [35;1m/builtin/derivation.nix:1:208[0m:
+┃        … while evaluating derivation '[35;1minit.lua[0m'
+┃          whose name attribute is located at [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/stdenv/generic/make-derivation.nix:334:7[0m
+┃ 
+┃        … while evaluating attribute '[35;1mtext[0m' of derivation '[35;1minit.lua[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:103:17[0m:
+┃           102|       ({
+┃           103|         inherit text executable checkPhase allowSubstitutes preferLocalBuild;
+┃              |                 [31;1m^[0m
+┃           104|         passAsFile = [ "text" ]
+┃ 
+┃        … from call site
+┃          [34;1mat [35;1m/nix/store/iqjb7l72w8zkmiyid9zghprj7x9ndsrs-source/wrapper.nix:188:9[0m:
+┃           187|
+┃           188|       ${lib.optionalString (allPlugins != [ ]) ''
+┃              |         [31;1m^[0m
+┃           189|         vim.opt.packpath:append('${packedDir}')
+┃ 
+┃        … while calling [35;1m'optionalString'[0m
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/strings.nix:268:5[0m:
+┃           267|     # String to return if condition is true
+┃           268|     string: if cond then string else "";
+┃              |     [31;1m^[0m
+┃           269|
+┃ 
+┃        … while calling the '[35;1mgetAttr[0m' builtin
+┃          [34;1mat [35;1m/builtin/derivation.nix:1:500[0m:
+┃        … while calling the '[35;1mderivationStrict[0m' builtin
+┃          [34;1mat [35;1m/builtin/derivation.nix:1:208[0m:
+┃        … while evaluating derivation '[35;1mneovim-pack-dir[0m'
+┃          whose name attribute is located at [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/stdenv/generic/make-derivation.nix:334:7[0m
+┃ 
+┃        … while evaluating attribute '[35;1mpassAsFile[0m' of derivation '[35;1mneovim-pack-dir[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:69:9[0m:
+┃            68|         inherit buildCommand name;
+┃            69|         passAsFile = [ "buildCommand" ]
+┃              |         [31;1m^[0m
+┃            70|           ++ (derivationArgs.passAsFile or [ ]);
+┃ 
+┃        [35;1m(6 duplicate frames omitted)[0m
+┃ 
+┃        … while evaluating list element at index [35;1m0[0m
+┃ 
+┃        … while evaluating attribute '[35;1mpaths[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:59:7[0m:
+┃            58|     pkgs = builtins.toJSON (map (drv: {
+┃            59|       paths =
+┃              |       [31;1m^[0m
+┃            60|         # First add the usual output(s): respect if user has chosen explicitly,
+┃ 
+┃        … while evaluating list element at index [35;1m0[0m
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/buildenv/default.nix:59:7[0m:
+┃            58|     pkgs = builtins.toJSON (map (drv: {
+┃            59|       paths =
+┃              |       [31;1m^[0m
+┃            60|         # First add the usual output(s): respect if user has chosen explicitly,
+┃ 
+┃        … while calling the '[35;1mgetAttr[0m' builtin
+┃          [34;1mat [35;1m/builtin/derivation.nix:1:500[0m:
+┃        … while calling the '[35;1mderivationStrict[0m' builtin
+┃          [34;1mat [35;1m/builtin/derivation.nix:1:208[0m:
+┃        … while evaluating derivation '[35;1mpackdir[0m'
+┃          whose name attribute is located at [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/stdenv/generic/make-derivation.nix:334:7[0m
+┃ 
+┃        … while evaluating attribute '[35;1mbuildCommand[0m' of derivation '[35;1mpackdir[0m'
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:68:17[0m:
+┃            67|         enableParallelBuilding = true;
+┃            68|         inherit buildCommand name;
+┃              |                 [31;1m^[0m
+┃            69|         passAsFile = [ "buildCommand" ]
+┃ 
+┃        … while calling the '[35;1mconcatStringsSep[0m' builtin
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:545:9[0m:
+┃           544|       cd $out
+┃           545|       ${lib.concatStrings linkCommands}
+┃              |         [31;1m^[0m
+┃           546|     '';
+┃ 
+┃        … from call site
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:530:22[0m:
+┃           529|
+┃           530|       linkCommands = lib.mapAttrsToList
+┃              |                      [31;1m^[0m
+┃           531|         (name: path: ''
+┃ 
+┃        … while calling [35;1m'mapAttrsToList'[0m
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/attrsets.nix:1095:5[0m:
+┃          1094|     f:
+┃          1095|     attrs:
+┃              |     [31;1m^[0m
+┃          1096|     map (name: f name attrs.${name}) (attrNames attrs);
+┃ 
+┃        … while calling the '[35;1mmap[0m' builtin
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/attrsets.nix:1096:5[0m:
+┃          1095|     attrs:
+┃          1096|     map (name: f name attrs.${name}) (attrNames attrs);
+┃              |     [31;1m^[0m
+┃          1097|
+┃ 
+┃        … while calling the '[35;1mattrNames[0m' builtin
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/attrsets.nix:1096:39[0m:
+┃          1095|     attrs:
+┃          1096|     map (name: f name attrs.${name}) (attrNames attrs);
+┃              |                                       [31;1m^[0m
+┃          1097|
+┃ 
+┃        … from call site
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:527:43[0m:
+┃           526|         # We do this foldl to have last-wins semantics in case of repeated entries
+┃           527|         else if (lib.isList entries) then lib.foldl (a: b: a // { "${b.name}" = b.path; }) { } entries
+┃              |                                           [31;1m^[0m
+┃           528|         else throw "linkFarm entries must be either attrs or a list!";
+┃ 
+┃        … while calling [35;1m'foldl'[0m
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/lists.nix:178:20[0m:
+┃           177|   */
+┃           178|   foldl = op: nul: list:
+┃              |                    [31;1m^[0m
+┃           179|     let
+┃ 
+┃        … from call site
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/lists.nix:184:8[0m:
+┃           183|         else op (foldl' (n - 1)) (elemAt list n);
+┃           184|     in foldl' (length list - 1);
+┃              |        [31;1m^[0m
+┃           185|
+┃ 
+┃        … while calling [35;1m'foldl''[0m
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/lists.nix:180:16[0m:
+┃           179|     let
+┃           180|       foldl' = n:
+┃              |                [31;1m^[0m
+┃           181|         if n == -1
+┃ 
+┃        … from call site
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/lists.nix:183:14[0m:
+┃           182|         then nul
+┃           183|         else op (foldl' (n - 1)) (elemAt list n);
+┃              |              [31;1m^[0m
+┃           184|     in foldl' (length list - 1);
+┃ 
+┃        … while calling [35;1manonymous lambda[0m
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:527:57[0m:
+┃           526|         # We do this foldl to have last-wins semantics in case of repeated entries
+┃           527|         else if (lib.isList entries) then lib.foldl (a: b: a // { "${b.name}" = b.path; }) { } entries
+┃              |                                                         [31;1m^[0m
+┃           528|         else throw "linkFarm entries must be either attrs or a list!";
+┃ 
+┃        … in the left operand of the update (//) operator
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:527:62[0m:
+┃           526|         # We do this foldl to have last-wins semantics in case of repeated entries
+┃           527|         else if (lib.isList entries) then lib.foldl (a: b: a // { "${b.name}" = b.path; }) { } entries
+┃              |                                                              [31;1m^[0m
+┃           528|         else throw "linkFarm entries must be either attrs or a list!";
+┃ 
+┃        … from call site
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/lists.nix:183:18[0m:
+┃           182|         then nul
+┃           183|         else op (foldl' (n - 1)) (elemAt list n);
+┃              |                  [31;1m^[0m
+┃           184|     in foldl' (length list - 1);
+┃ 
+┃        [35;1m(43 duplicate frames omitted)[0m
+┃ 
+┃        … in the right operand of the update (//) operator
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/pkgs/build-support/trivial-builders/default.nix:527:62[0m:
+┃           526|         # We do this foldl to have last-wins semantics in case of repeated entries
+┃           527|         else if (lib.isList entries) then lib.foldl (a: b: a // { "${b.name}" = b.path; }) { } entries
+┃              |                                                              [31;1m^[0m
+┃           528|         else throw "linkFarm entries must be either attrs or a list!";
+┃ 
+┃        … while evaluating the attribute '[35;1mname[0m'
+┃          [34;1mat [35;1m/nix/store/iqjb7l72w8zkmiyid9zghprj7x9ndsrs-source/wrapper.nix:73:15[0m:
+┃            72|             map (drv: {
+┃            73|               name = "${packPath}/start/${lib.getName drv}";
+┃              |               [31;1m^[0m
+┃            74|               path = drv;
+┃ 
+┃        … from call site
+┃          [34;1mat [35;1m/nix/store/iqjb7l72w8zkmiyid9zghprj7x9ndsrs-source/wrapper.nix:73:43[0m:
+┃            72|             map (drv: {
+┃            73|               name = "${packPath}/start/${lib.getName drv}";
+┃              |                                           [31;1m^[0m
+┃            74|               path = drv;
+┃ 
+┃        … while calling [35;1manonymous lambda[0m
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/strings.nix:731:6[0m:
+┃           730|     parse = drv: (parseDrvName drv).name;
+┃           731|   in x:
+┃              |      [31;1m^[0m
+┃           732|     if isString x
+┃ 
+┃        … from call site
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/strings.nix:734:22[0m:
+┃           733|     then parse x
+┃           734|     else x.pname or (parse x.name);
+┃              |                      [31;1m^[0m
+┃           735|
+┃ 
+┃        … while calling [35;1m'parse'[0m
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/strings.nix:730:13[0m:
+┃           729|   getName = let
+┃           730|     parse = drv: (parseDrvName drv).name;
+┃              |             [31;1m^[0m
+┃           731|   in x:
+┃ 
+┃        … while calling the '[35;1mparseDrvName[0m' builtin
+┃          [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/strings.nix:730:19[0m:
+┃           729|   getName = let
+┃           730|     parse = drv: (parseDrvName drv).name;
+┃              |                   [31;1m^[0m
+┃           731|   in x:
+┃ 
+┃        … while evaluating the first argument passed to builtins.parseDrvName
+┃ 
+┃        [31;1merror:[0m attribute '[35;1mname[0m' missing
+┃        [34;1mat [35;1m/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source/lib/strings.nix:734:28[0m:
+┃           733|     then parse x
+┃           734|     else x.pname or (parse x.name);
+┃              |                            [31;1m^[0m
+┃           735|[0m
+┣━━━                                                             
+┗━ ∑ [1m[31m⚠ Exited with 1 errors reported by nix at 12:12:13 after 14s[0m[0m[?25h
+Error: 
+   0: [91mCommand exited with status Exited(1)[0m
+
+Location:
+   [35msrc/commands.rs[0m:[35m151[0m
